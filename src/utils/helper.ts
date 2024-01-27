@@ -1,4 +1,4 @@
-import { PostItem } from "@src/types";
+import { Member, PostItem } from "@src/types";
 import { members } from "@members";
 import posts from "@.contents/posts.json";
 
@@ -19,4 +19,16 @@ export function getFaviconSrcFromOrigin(hostname: string) {
 }
 export function getMemberPath(id: string) {
   return `/members/${encodeURIComponent(id)}`;
+}
+
+export function getMemberAvatarSrc(member: Member) {
+  if (member.avatarSrc) {
+    return member.avatarSrc;
+  }
+
+  return getGitHubIdenticons(member.githubUsername);
+}
+
+export function getGitHubIdenticons(githubUsername: string) {
+  return `https://github.com/identicons/${githubUsername}.png`;
 }

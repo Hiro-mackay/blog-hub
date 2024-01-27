@@ -1,9 +1,13 @@
 export const config = {
   siteMeta: {
-    title: "Team Blog Hub",
-    teamName: "catnose Inc.",
-    description: "RSS based blog starter kit for teams.",
+    title: "Mackay's Hub",
+    teamName: "John Mackay",
+    description: "Mackay's posts curation site",
   },
+
+  /**
+   * @todo Add your site's domain here
+   */
   siteRoot:
     process.env.NODE_ENV === "production"
       ? "https://team-blog-hub.vercel.app"

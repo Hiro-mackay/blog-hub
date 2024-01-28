@@ -21,24 +21,26 @@ const PostLink: React.FC<{ item: PostItem }> = (props) => {
 
   return (
     <article className="post-link">
-      <Link href={getMemberPath(member.id)} passHref>
-        <a className="post-link__author">
-          <img
-            src={member.avatarSrc}
-            className="post-link__author-img"
-            width={35}
-            height={35}
-            alt={member.name}
-          />
-          <div className="post-link__author-name">
-            <div className="post-link__author-name">{member.name}</div>
-            <time dateTime={isoDate} className="post-link__date">
-              {dayjs(isoDate).fromNow()}
-            </time>
-          </div>
-        </a>
+      <Link
+        href={getMemberPath(member.id)}
+        className="post-link__author"
+        passHref
+      >
+        <img
+          src={member.avatarSrc}
+          className="post-link__author-img"
+          width={35}
+          height={35}
+          alt={member.name}
+        />
+        <div className="post-link__author-name">
+          <div className="post-link__author-name">{member.name}</div>
+          <time dateTime={isoDate} className="post-link__date">
+            {dayjs(isoDate).fromNow()}
+          </time>
+        </div>
       </Link>
-      <a href={link} className="post-link__main-link">
+      <Link href={link} className="post-link__main-link" passHref>
         <h2 className="post-link__title">{title}</h2>
         {hostname && (
           <div className="post-link__site">
@@ -52,7 +54,7 @@ const PostLink: React.FC<{ item: PostItem }> = (props) => {
             {hostname}
           </div>
         )}
-      </a>
+      </Link>
       {dateMiliSeconds && dateMiliSeconds > Date.now() - 86400000 * 3 && (
         <div className="post-link__new-label">NEW</div>
       )}

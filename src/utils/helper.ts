@@ -26,7 +26,15 @@ export function getMemberAvatarSrc(member: Member) {
     return member.avatarSrc;
   }
 
-  return getGitHubIdenticons(member.githubUsername);
+  if (member.githubUsername) {
+    return getGitHubIdenticons(member.githubUsername);
+  }
+
+  return getDefaultAvatarSrc();
+}
+
+export function getDefaultAvatarSrc() {
+  return "/avatars/default.png";
 }
 
 export function getGitHubIdenticons(githubUsername: string) {

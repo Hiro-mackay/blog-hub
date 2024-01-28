@@ -11,16 +11,13 @@ export const members: Member[] = [
       "https://zenn.dev/catnose99/feed",
       "https://catnose.medium.com/feed",
     ],
-    includeUrlRegex: "medium.com|zenn.dev",
-    twitterUsername: "catnose99",
-    githubUsername: "catnose99",
-    websiteUrl: "https://catnose99.com",
   },
   {
     id: "mackay",
     name: "マッケイ",
     role: "エンジニアリングマネージャー",
     bio: "エンジニアリングマネージャー。プログラミングと読書が趣味。",
+    avatarSrc: "/avatars/mackay.jpg",
     sources: [
       "https://zenn.dev/mackay/feed",
       "https://qiita.com/johnmackay150/feed",

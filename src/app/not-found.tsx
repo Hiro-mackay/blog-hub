@@ -3,7 +3,7 @@ import { ContentWrapper } from "@src/components/ContentWrapper";
 import { LinkBackHome } from "@src/components/LinkBackHome";
 import { PageSEO } from "@src/components/PageSEO";
 
-const Page: NextPage = () => {
+export default async function NotFound() {
   return (
     <>
       <PageSEO title="404 not found" noindex={true} />
@@ -22,6 +22,4 @@ const Page: NextPage = () => {
       </div>
     </>
   );
-};
-
-export default Page;
+}

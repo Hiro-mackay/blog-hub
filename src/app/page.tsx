@@ -12,7 +12,7 @@ import {
   UndoWrapForScroll,
 } from "@src/components/ContentWrapper";
 
-const Page: NextPage = () => {
+export default async function Page() {
   return (
     <>
       <PageSEO
@@ -63,6 +63,4 @@ const Page: NextPage = () => {
       </section>
     </>
   );
-};
-
-export default Page;
+}

@@ -8,14 +8,14 @@ import { ContentWrapper } from "@src/components/ContentWrapper";
 import { PageSEO } from "@src/components/PageSEO";
 import { getMemberPath } from "@src/utils/helper";
 import { Member } from "@src/types";
+import { MemberAvatar } from "@src/components/MemberAvatar";
 
 const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
   return (
     <Link href={getMemberPath(member.id)} className="member-card" passHref>
       <div className="member-card__avatar">
-        <img
-          src={member.avatarSrc}
-          alt={member.name}
+        <MemberAvatar
+          memberId={member.id}
           width={80}
           height={80}
           className="member-card__avatar-img"
@@ -27,7 +27,7 @@ const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
   );
 };
 
-const Page: NextPage = () => {
+export default async function Page() {
   return (
     <>
       <PageSEO title="Members" path="/members" />
@@ -48,6 +48,4 @@ const Page: NextPage = () => {
       </ContentWrapper>
     </>
   );
-};
-
-export default Page;
+}

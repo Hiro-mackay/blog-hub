@@ -5,6 +5,10 @@
     "outDir": "dist",
     "noEmit": false
   },
-  "exclude": ["node_modules"],
-  "include": ["src/builder/*.ts"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/builder/*.ts"
+  ]
 }

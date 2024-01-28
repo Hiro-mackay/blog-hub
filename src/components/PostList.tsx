@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import dayjs from "dayjs";
@@ -9,6 +11,7 @@ import {
   getMemberPath,
   getMemberById,
 } from "@src/utils/helper";
+import { MemberAvatar } from "./MemberAvatar";
 
 dayjs.extend(relativeTime);
 
@@ -26,12 +29,11 @@ const PostLink: React.FC<{ item: PostItem }> = (props) => {
         className="post-link__author"
         passHref
       >
-        <img
-          src={member.avatarSrc}
+        <MemberAvatar
+          memberId={member.id}
           className="post-link__author-img"
           width={35}
           height={35}
-          alt={member.name}
         />
         <div className="post-link__author-name">
           <div className="post-link__author-name">{member.name}</div>

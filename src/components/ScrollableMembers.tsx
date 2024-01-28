@@ -1,6 +1,7 @@
 import { members } from "@members";
 import { getMemberPath } from "@src/utils/helper";
 import Link from "next/link";
+import { MemberAvatar } from "./MemberAvatar";
 
 export const ScrollableMembers: React.FC = () => {
   return (
@@ -13,9 +14,8 @@ export const ScrollableMembers: React.FC = () => {
           passHref
         >
           <span className="scrollable-member__image">
-            <img
-              src={member.avatarSrc}
-              alt={member.name}
+            <MemberAvatar
+              memberId={member.id}
               className="scrollable-member__img"
               width={80}
               height={80}
